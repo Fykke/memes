@@ -1,0 +1,71 @@
+from tkinter import *
+import pygame
+from PIL import ImageTk, Image
+
+root = Tk()
+root.title('sussy theme')
+root.iconbitmap('amogus.ico')
+root.geometry("288x380")
+root.resizable(False, False)
+
+pygame.mixer.init()
+pygame.mixer.music.set_volume(0.02)
+
+def play(file):
+    pygame.mixer.music.load(file)
+    pygame.mixer.music.play(loops=0)
+
+def auto():
+    play('C.wav'), root.after(300)
+    play('EB.wav'), root.after(300)
+    play('F.wav'), root.after(300)
+    play('FS.wav'), root.after(300)
+    play('F.wav'), root.after(300)
+    play('EB.wav'), root.after(300)
+    play('C.wav'), root.after(1000)
+    play('BB.wav'), root.after(200)
+    play('D.wav'), root.after(200)
+    play('C.wav'), root.after(1200)
+    play('C.wav'), root.after(300)
+    play('EB.wav'), root.after(300)
+    play('F.wav'), root.after(300)
+    play('FS.wav'), root.after(300)
+    play('F.wav'), root.after(300)
+    play('EB.wav'), root.after(300)
+    play('FS.wav'), root.after(1000)
+    play('FS.wav'), root.after(200)
+    play('F.wav'), root.after(200)
+    play('EB.wav'), root.after(200)
+    play('FS.wav'), root.after(200)
+    play('F.wav'), root.after(200)
+    play('EB.wav'), root.after(200)
+
+my_button1 = Button(root, text="C ", font=("Helvetica", 16), activebackground='red', width=24, command= lambda: play('C.wav'))
+my_button2 = Button(root, text="Eb", font=("Helvetica", 16), activebackground='red', width=24, command= lambda: play('EB.wav'))
+my_button3 = Button(root, text="F ", font=("Helvetica", 16), activebackground='red', width=24, command= lambda: play('F.wav'))
+my_button4 = Button(root, text="Fs", font=("Helvetica", 16), activebackground='red', width=24, command= lambda: play('FS.wav'))
+my_button5 = Button(root, text="D ", font=("Helvetica", 16), activebackground='red', width=24, command= lambda: play('D.wav'))
+my_button6 = Button(root, text="Bb", font=("Helvetica", 16), activebackground='red', width=24, command= lambda: play('BB.wav'))
+my_button7 = Button(root, text="Auto", font=("Helvetica", 16), activebackground='red', width=24, command= lambda: auto())
+
+root.bind("1", lambda event: play('C.wav'))
+root.bind("2", lambda event: play('EB.wav'))
+root.bind("3", lambda event: play('F.wav'))
+root.bind("4", lambda event: play('FS.wav'))
+root.bind("5", lambda event: play('D.wav'))
+root.bind("6", lambda event: play('BB.wav'))
+
+image = Image.open("amogus.png")
+resize_image = image.resize((100, 100))
+img = ImageTk.PhotoImage(resize_image)
+my_label = Label(image=img)
+
+my_button1.pack()
+my_button2.pack()
+my_button3.pack()
+my_button4.pack()
+my_button5.pack()
+my_button6.pack()
+my_button7.pack()
+my_label.pack()
+root.mainloop()
